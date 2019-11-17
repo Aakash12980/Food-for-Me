@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Foodie</string>
+    <string name="login">Login</string>
+    <string name="signup">Signup</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="email">Email</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Admin Home Sliding tab Fragments -->
+    <string name="new_order">New Order</string>
+    <string name="current_order">Current Order</string>
+    <string name="serve_food">Serve Food</string>
+    <string name="bill">Bill Section</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>
