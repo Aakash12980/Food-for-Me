@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/client_setting"
+        android:icon="@drawable/home_setting"
+        android:title="Settings"/>
+    <item android:id="@+id/client_favourite"
+        android:icon="@drawable/favourite"
+        android:title="Favourites"/>
+    <item android:id="@+id/client_home"
+        android:icon="@drawable/home_home"
+        android:title="Home"/>
+    <item android:id="@+id/client_notification"
+        android:icon="@drawable/notification"
+        android:title="Notification"/>
+    <item android:id="@+id/client_profile"
+        android:icon="@drawable/home_account"
+        android:title="Profile"/>
+</menu>

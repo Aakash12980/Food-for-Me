@@ -1,17 +1,19 @@
 package com.example.foodforme.Client.home;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
-import com.example.foodforme.Client.ClientAdapters.RestroHomeListAdapter;
+import com.example.foodforme.Client.home.navigationDrawer.FragmentClientFavourites;
+import com.example.foodforme.Client.home.navigationDrawer.FragmentClientHome;
+import com.example.foodforme.Client.home.navigationDrawer.FragmentClientNotification;
+import com.example.foodforme.Client.home.navigationDrawer.FragmentClientProfile;
+import com.example.foodforme.Client.home.navigationDrawer.FragmentClientSetting;
 import com.example.foodforme.R;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AppHome extends AppCompatActivity {
 
@@ -21,23 +23,36 @@ public class AppHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_home);
 
-        RecyclerView restroListView = (RecyclerView) findViewById(R.id.home_restro_list);
-        restroListView.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<List<String>> title = new ArrayList<List<String>>();
-        String data[] = {"Hello", "There"};
-        List<String> data1 = Arrays.asList(data);
-        title.add(data1);
-        data = new String[]{"Me", "You"};
-        List<String> data2 = Arrays.asList(data);;
-        title.add(data2);
-        data = new String[]{"Them", "Rheaaa"};
-        List<String> data3 = Arrays.asList(data);
-        title.add(data3);
-        data = new String[]{"Hi", "Fukka"};
-        List<String> data4 = Arrays.asList(data);
-        title.add(data4);
-        restroListView.setAdapter(new RestroHomeListAdapter(title));
+        BottomNavigationView bottomNavigationView = findViewById(R.id.client_nav_bar);
+        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-
+        getSupportFragmentManager().beginTransaction().replace(R.id.client_fragment_container, new FragmentClientHome()).commit();
     }
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    Fragment selectedFragment = null;
+
+                    switch (menuItem.getItemId()){
+                        case R.id.client_home:
+                            selectedFragment = new FragmentClientHome();
+                            break;
+                        case R.id.client_setting:
+                            selectedFragment = new FragmentClientSetting();
+                            break;
+                        case R.id.client_notification:
+                            selectedFragment = new FragmentClientNotification();
+                            break;
+                        case R.id.client_favourite:
+                            selectedFragment = new FragmentClientFavourites();
+                            break;
+                        case R.id.client_profile:
+                            selectedFragment = new FragmentClientProfile();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.client_fragment_container, selectedFragment).commit();
+                    return true;
+                }
+            };
 }
