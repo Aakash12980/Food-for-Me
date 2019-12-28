@@ -19,6 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility = 1.8
+        sourceCompatibility = 1.8
+    }
+
 }
 
 dependencies {
@@ -36,6 +41,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.libraries.places:places:2.0.0'
 
     // firebase dependencies
     implementation 'com.google.firebase:firebase-firestore:21.3.0'

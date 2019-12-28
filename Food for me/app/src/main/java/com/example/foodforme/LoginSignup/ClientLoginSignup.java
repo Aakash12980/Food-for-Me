@@ -23,4 +23,9 @@ public class ClientLoginSignup extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
     }
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        System.exit(0);
+    }
 }

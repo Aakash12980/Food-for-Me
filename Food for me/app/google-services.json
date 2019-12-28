@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "633995892714",
-    "firebase_url": "https://food-for-me-89269.firebaseio.com",
-    "project_id": "food-for-me-89269",
-    "storage_bucket": "food-for-me-89269.appspot.com"
+    "project_number": "978213635014",
+    "firebase_url": "https://food-for-me-e63de.firebaseio.com",
+    "project_id": "food-for-me-e63de",
+    "storage_bucket": "food-for-me-e63de.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:633995892714:android:f2a5af8e223cf56b880493",
+        "mobilesdk_app_id": "1:978213635014:android:5ede1283d982724dd068c7",
         "android_client_info": {
           "package_name": "com.example.foodforme"
         }
       },
       "oauth_client": [
         {
-          "client_id": "633995892714-446hnkp7ujpl3pigi0fq229ba7q056d4.apps.googleusercontent.com",
+          "client_id": "978213635014-ugtcm0t5fevvnfc8nasmhd00i0j595vh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.foodforme",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "633995892714-itjub7epii4el9mvkieavqhvrgnj19hl.apps.googleusercontent.com",
+          "client_id": "978213635014-kd5qifk16okmt62hcrsii1or7rq9d70i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCSG6ypz2EAyo5FL4m5KWoLzNvQdWSDSA4"
+          "current_key": "AIzaSyCBoVF48vjcIFU_-15ikt0YbVpWKVHq6vg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "633995892714-itjub7epii4el9mvkieavqhvrgnj19hl.apps.googleusercontent.com",
+              "client_id": "978213635014-kd5qifk16okmt62hcrsii1or7rq9d70i.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

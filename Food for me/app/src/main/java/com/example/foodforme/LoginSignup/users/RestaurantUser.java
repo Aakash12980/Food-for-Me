@@ -5,12 +5,17 @@ public class RestaurantUser {
     private String location;
     private String email;
     private String password;
+    private boolean isAdmin = true;
 
     public RestaurantUser(String restaurantName, String location, String email, String password) {
         this.restaurantName = restaurantName;
         this.location = location;
         this.email = email;
         this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
     public String getRestaurantName() {

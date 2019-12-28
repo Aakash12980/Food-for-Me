@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/background_color"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:openDrawer="star">
+    tools:openDrawer="start">
 
     <LinearLayout
         android:orientation="vertical"
@@ -70,7 +71,7 @@
         android:id="@+id/admin_nav_view"
         app:headerLayout="@layout/admin_nav_header"
         app:menu="@menu/admin_menu"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/background_color"/>
 
 
 

@@ -55,4 +55,9 @@ public class AppHome extends AppCompatActivity {
                     return true;
                 }
             };
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        System.exit(0);
+    }
 }

@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="12dp">
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/client_login_username"
         android:layout_centerHorizontal="true"
+        android:hint="@string/username"
+        android:textColorHint="@color/text_hint_color"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:backgroundTint="@color/box_color"
+        android:background="@drawable/input_box_border"
         android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="@string/username"
+            android:background="@null"
             android:paddingRight="8dp"
             android:paddingLeft="8dp"/>
 
@@ -24,14 +31,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/client_login_password"
+        android:hint="@string/password"
+        android:textColorHint="@color/text_hint_color"
         android:layout_below="@+id/client_login_username"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+        android:backgroundTint="@color/box_color"
+        android:background="@drawable/input_box_border"
         android:layout_marginBottom="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="@string/password"
+            android:background="@null"
             android:paddingRight="8dp"
             android:paddingLeft="8dp"/>
 
@@ -47,8 +59,8 @@
         android:textColor="@android:color/black"
         android:layout_below="@+id/client_login_password"
         android:layout_marginTop="10dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"/>
+        android:backgroundTint="@color/button_color"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Button"/>
 
     <TextView
         android:id="@+id/client_forgot_password"

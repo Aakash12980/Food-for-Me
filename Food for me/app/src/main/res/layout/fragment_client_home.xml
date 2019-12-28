@@ -3,7 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="12dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/user_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_account"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -12,93 +30,10 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/cart"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/cart"
-                android:layout_alignParentRight="true"/>
+            android:layout_height="180dp"
+            android:background="@color/background_color">
 
         </RelativeLayout>
-        <TextView
-            android:textAlignment="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="70sp"
-            android:textStyle="bold"
-            android:textColor="@color/app_text_color"
-            android:fontFamily="@font/fascinate_inline"/>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                app:queryHint="Search food"
-                app:iconifiedByDefault="false"
-                android:background="@android:color/holo_blue_bright"
-                />
-        </androidx.cardview.widget.CardView>
-
-        <HorizontalScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.chip.ChipGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:chipSpacing="7dp"
-                app:singleSelection="true">
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_breakfast"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:chipBackgroundColor="#B7BBCD"
-                    app:rippleColor="#5E6FBB"
-                    android:text="Breakfast"
-                    android:checkable="true"/>
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_lunch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:chipBackgroundColor="#B7BBCD"
-                    app:rippleColor="#5E6FBB"
-                    android:text="Lunch"
-                    android:checkable="true"/>
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_Dinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:chipBackgroundColor="#B7BBCD"
-                    app:rippleColor="#5E6FBB"
-                    android:text="Dinner"
-                    android:checkable="true"/>
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_drinks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:chipBackgroundColor="#B7BBCD"
-                    app:rippleColor="#5E6FBB"
-                    android:text="Drinks"
-                    android:checkable="true"/>
-
-            </com.google.android.material.chip.ChipGroup>
-        </HorizontalScrollView>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_restro_list"
             android:layout_width="match_parent"
@@ -106,5 +41,10 @@
 
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </RelativeLayout>
 
 </LinearLayout>

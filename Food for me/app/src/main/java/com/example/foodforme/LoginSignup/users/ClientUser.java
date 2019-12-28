@@ -5,6 +5,7 @@ public class ClientUser {
     private String lname;
     private String email;
     private String password;
+    private boolean isAdmin = false;
 
     public ClientUser(String fname, String lname, String email, String password) {
         this.fname = fname;
@@ -19,6 +20,9 @@ public class ClientUser {
 
     public void setFname(String fname) {
         this.fname = fname;
+    }
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
     public void setEmail(String email) {

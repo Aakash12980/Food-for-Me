@@ -20,7 +20,15 @@ public class AdminLoginSignup extends AppCompatActivity {
         AdminFragmentAdapter adapter = new AdminFragmentAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(adapter);
 
+        Bundle placeData = getIntent().getBundleExtra("placeData");
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.admin_login_signup_sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        System.exit(0);
     }
 }

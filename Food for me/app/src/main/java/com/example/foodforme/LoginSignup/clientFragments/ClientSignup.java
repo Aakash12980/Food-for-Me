@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,11 +20,15 @@ import com.example.foodforme.LoginSignup.users.ClientUser;
 
 import com.example.foodforme.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,8 +39,12 @@ public class ClientSignup extends Fragment {
     private String email;
     private String password1;
     private String password2;
+    private String userId;
     private ClientUser newUser;
     private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    private final String TAG = "ClientSignup";
 
 
     public ClientSignup() {
@@ -67,7 +76,6 @@ public class ClientSignup extends Fragment {
                 password1 = password1View.getEditText().getText().toString().trim();;
                 password2 = password2View.getEditText().getText().toString().trim();
 
-
                 // form validation
                 if (TextUtils.isEmpty(fname)){
                     fnameView.setError("Your first name is required!");
@@ -95,13 +103,28 @@ public class ClientSignup extends Fragment {
                 }
 
                 if (validatePassword(password1, password2)){
-                    newUser = new ClientUser(fname, lname, email, password1);
                     firebaseAuth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(getContext(), "ClientUser Account Created.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getContext(), AppHome.class));
+                                userId = firebaseAuth.getCurrentUser().getUid();
+                                final DocumentReference documentReference = db.collection("clientUsers").document(userId);
+                                newUser = new ClientUser(fname, lname, email, password1);
+                                documentReference.set(newUser).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                        Toast.makeText(getContext(), "ClientUser Account Created.", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getContext(), AppHome.class));
+                                        getActivity().finish();
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error adding document", e);
+                                    }
+                                });
+
                             }else {
                                 Toast.makeText(getContext(), "Internal Error occurred!", Toast.LENGTH_SHORT).show();
                                 return;

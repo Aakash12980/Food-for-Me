@@ -75,7 +75,8 @@ public class AdminHome extends AppCompatActivity implements NavigationView.OnNav
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         else {
-            super.onBackPressed();
+            finishAffinity();
+            System.exit(0);
         }
     }
 }
