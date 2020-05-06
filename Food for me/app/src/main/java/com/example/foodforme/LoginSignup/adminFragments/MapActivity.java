@@ -96,7 +96,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     private void init(){
         Log.d(TAG, "init: initializing ");
         if (!Places.isInitialized()) {
-            Places.initialize(getApplicationContext(), "AIzaSyDZrs6bMG5DztNhn9CqflCIb7YFmrbywZg");
+            Places.initialize(getApplicationContext(), "");
         }
 
         AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
